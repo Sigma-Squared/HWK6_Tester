@@ -9,4 +9,13 @@ Windows
 ```
 py -3 AutoTester.py num_testcases path_to_executable > outputfile.txt (optional)
 ```
-
+###Sample Output:
+```
+-----------------------------------------
+Test # 18
+Expression:	 26+(43+(46))*(27)/(2*33/45)
+Program Answer:	 1664.41
+Correct Answer:	 1664.41
+PASS
+-----------------------------------------
+```
