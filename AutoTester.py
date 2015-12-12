@@ -20,12 +20,9 @@ def main():
     N_MAXINT = 50  # maximum value of an integer
     BRACKET_PROB = 0.44  # probability of a bracket appearing
     for i in range(N_TESTCASES):
-        num_nums = random.randint(1, N_MAXNUMS)
-
         # create list of rand numbers
-        num_seq = list(map(str, (random.randint(1, N_MAXINT)
-                                 for _ in range(num_nums))))
-
+        num_seq = random.sample(range(1,N_MAXINT), random.randint(1,N_MAXNUMS))
+        num_seq = list(map(str, num_seq))
         # randomly insert operators
         operators = ('*', '/', '+', '-')
         for i in range(1, len(num_seq) * 2 - 1, 2):
