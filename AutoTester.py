@@ -29,7 +29,7 @@ def main():
         # randomly insert operators
         operators = ('*', '/', '+', '-')
         for i in range(1, len(num_seq) * 2 - 1, 2):
-            num_seq.insert(i, operators[random.randint(0, len(operators) - 1)])
+            num_seq.insert(i, random.choice(operators))
 
         # randomly insert brackets
         for i, item in enumerate(num_seq):
