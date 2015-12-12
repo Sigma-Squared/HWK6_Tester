@@ -91,7 +91,11 @@ def getOutput(testcases, fname):
         if (index == -1):
             raise ImproperFormatError
         output[i] = string[index+2:]
-    return tuple(map(float, output))
+    try:
+        output = tuple(map(float, output))
+    except ValueError:
+        raise ImproperFormatError
+    return output
 
 if __name__ == '__main__':
     main()
