@@ -18,4 +18,10 @@ Program Answer:	 1664.41
 Correct Answer:	 1664.41
 PASS
 -----------------------------------------
+Test # 19
+Expression:	 12/(32)+24/17/(21*(11)*29)+1
+Program Answer:	 9457.64
+Correct Answer:	 1.38
+FAIL! Extreme error of 9456.26 detected
+-----------------------------------------
 ```
