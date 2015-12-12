@@ -90,7 +90,6 @@ def getOutput(testcases, fname):
         index = string.find('=') + 2
         if (index == -1):
             raise ImproperFormatError
-            return
         output[i] = string[index:]
     return tuple(map(float, output))
 
