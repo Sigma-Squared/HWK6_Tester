@@ -87,10 +87,10 @@ def getOutput(testcases, fname):
     proc.kill()
     output.pop()  # remove last useless string
     for i, string in enumerate(output):
-        index = string.find('=') + 2
+        index = string.find('=')
         if (index == -1):
             raise ImproperFormatError
-        output[i] = string[index:]
+        output[i] = string[index+2:]
     return tuple(map(float, output))
 
 if __name__ == '__main__':
