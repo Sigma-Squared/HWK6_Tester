@@ -2,6 +2,8 @@ from subprocess import *
 import random
 import sys
 
+class ImproperFormatError(Exception):
+    pass
 
 def main():
     if len(sys.argv) < 3:
@@ -47,6 +49,9 @@ def main():
     except FileNotFoundError:
         print("'" + sys.argv[2] + "' Not found.", file=sys.stderr)
         return
+    except ImproperFormatError:
+        print("Program does not have the correct output format.",file=sys.stderr)
+        return
     print("Done.\nEnumerating Test Cases...")
     wrong = 0
     for i, test in enumerate(test_cases):
@@ -83,6 +88,9 @@ def getOutput(testcases, fname):
     output.pop()  # remove last useless string
     for i, string in enumerate(output):
         index = string.find('=') + 2
+        if (index == -1):
+            raise ImproperFormatError
+            return
         output[i] = string[index:]
     return tuple(map(float, output))
 
